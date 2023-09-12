@@ -1,0 +1,44 @@
+  ALGORITHME_compteur_de_mots_et_voyelles
+  FUNCTION nbrV(texte:STRING) : INTEGER
+  VAR
+    i,nbr:INTEGER
+
+  BEGIN
+ nbr=0;
+FOR i FROM 0 TO lenghth(texte)-1 STEP 1  DO
+    IF (texte [i]='a'ou texte [i]='e'ou texte [i]='i'ou texte [i]='o'ou texte [i]='y'ou texte [i]='u' )
+     THEN
+        nbr:=(nbr+1)
+    END_IF
+END_FOR
+    RETURN nbr ;
+  END
+  FUNCTION nbrrM(text:STRING) : INTEGER
+  VAR
+    i,nbrm:INTEGER;
+  BEGIN
+  nbrm=0;
+    FOR i FROM 0 TO lenghth(texte)-1 STEP 1  DO
+       IF (ch[i]='') THEN
+        i:=(i+1)
+        ELSE
+            nbrm:=(nbrm+1);
+        
+       END_IF
+    END_FOR
+    RETURN nbrm ;
+  END
+  VAR
+  texte,continuer:STRING;
+  BEGIN
+  REPEAT
+    write ('Entrer le texte de botre choix: ');
+    read (texte);
+    write('Votre texte contient',nbrV(texte),'voyelles');
+    write('Votre texte contien',nbrrM(texte),'mots');
+    write('Oui:Entrer un nouveau texte. Non:Quitter le programme');
+    read(continuer);
+  UNTIL (continuer='Non');
+  END
+
+
